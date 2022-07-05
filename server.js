@@ -7,7 +7,7 @@ var amqpConn = null;
 
 var rmOptions = {
     protocol: 'amqp',
-    hostname: '64.227.173.41',
+    hostname: '10.122.0.3',
     port: 5672,
     username: 'ds',
     password: 'windows2020',
