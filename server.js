@@ -195,4 +195,4 @@ const sendError = (ws, message) => {
     ws.send(JSON.stringify(messageObject));
   };
 
-console.log("The WebSocket server is running on port 3000");
+console.log("Data Subscription Server is running on port 3000");
