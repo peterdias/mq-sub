@@ -21,7 +21,7 @@ function startampq() {
     amqp.connect(rmOptions, function(err, conn) {
       if (err) {
         console.error("[AMQP]", err.message);
-        return setTimeout(start, 1000);
+        return;
       }
       conn.on("error", function(err) {
         if (err.message !== "Connection closing") {
