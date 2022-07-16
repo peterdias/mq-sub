@@ -46,18 +46,12 @@ function closeOnErr(err) {
   }
 
 function processMsg(data) {
-    // msg.fields.routingKey, msg.content.toString()
+     
     try 
     {
         var message = JSON.parse(data.content.toString());
-        
-        //var bar = message.candles[0];
-        //if(bar.open == null) return;
-        //console.log(bar.time)
-        //var ts = Date.parse(bar.time); 
-        //var candle = [ts,bar.open,bar.high,bar.low,bar.close,bar.vol];
-        
-        var output = {type:"tick-update",t: message.ts,price: message.ltp,volume: message.volume} ;           
+         
+        var output = {type:"tick-update",t: message.ts,price: message.ltp,volume: message.volume, exchange: message.exchange, tradingsymbol: message.tradingsymbol} ;           
          
         chart_clients.forEach(function (client) {           
             if (client.symbols.indexOf(message.exchange+"-"+message.tradingsymbol) > -1){                 
