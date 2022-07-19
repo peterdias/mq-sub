@@ -53,7 +53,7 @@ function processMsg(data) {
          
         var output = {type:"tick-update",t: message.ts,price: message.ltp,
                     volume: message.volume, exchange: message.exchange, 
-                    tradingsymbol: message.tradingsymbol, change: message.change} ;           
+                    tradingsymbol: message.tradingsymbol, change: message.change,change_percent: message.change_percent} ;           
          
         chart_clients.forEach(function (client) {           
             if (client.symbols.indexOf(message.exchange+"-"+message.tradingsymbol) > -1){                 
