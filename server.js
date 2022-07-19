@@ -51,7 +51,9 @@ function processMsg(data) {
     {
         var message = JSON.parse(data.content.toString());
          
-        var output = {type:"tick-update",t: message.ts,price: message.ltp,volume: message.volume, exchange: message.exchange, tradingsymbol: message.tradingsymbol} ;           
+        var output = {type:"tick-update",t: message.ts,price: message.ltp,
+                    volume: message.volume, exchange: message.exchange, 
+                    tradingsymbol: message.tradingsymbol, change: message.change} ;           
          
         chart_clients.forEach(function (client) {           
             if (client.symbols.indexOf(message.exchange+"-"+message.tradingsymbol) > -1){                 
